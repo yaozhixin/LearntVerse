@@ -118,16 +118,40 @@
         <div class="card shadow-xss rounded-xxl border-0 mb-3">
             <div class="card-body">
                 <p><span class="topic-number fw-700"> Sign-up </span></p>
-                <p><span class="topic-number"> Email: </span><input class="input-attrs" style="margin-left: 190px;" type="text" name="search" placeholder="Email"></p>
-                <p><span class="topic-number"> Password: </span><input class="input-attrs" style="margin-left: 135px;" type="text" name="search" placeholder="Passwd"></p>
-                <p><span class="topic-number"> Password confirm: </span><input class="input-attrs" type="text" name="search" placeholder="Passwd"></p>
+                <p><span class="topic-number"> Email: </span><input class="input-attrs" style="margin-left: 190px;"
+                        type="text" name="search" placeholder="Email"></p>
+                <p><span class="topic-number"> Password: </span><input class="input-attrs" style="margin-left: 135px;"
+                        type="text" name="search" placeholder="Passwd"></p>
+                <p><span class="topic-number"> Password confirm: </span><input class="input-attrs" type="text"
+                        name="search" placeholder="Passwd"></p>
                 <p>
-                    <button class="button-attrs" onclick="location.href='profile.html'">Sign-up</button>
+                <form id="loginform" method="post">
+                    <input type="radio" name="identity" value="Learner">Learner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="identity" value="Teacher">Teacher&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="identity" value="Both">Both
+                    <p>
+                        <button class="button-attrs" onclick="register()">Sign-up</button>
+                    </p>
+                </form>
                 </p>
             </div>
         </div>
     </div>
 
+
+    <script type="text/javascript">
+        function register() {
+            var ident =$("input[name = 'identity']:checked").val(); 
+            if (ident== "Learner") {
+                loginform.action="profile_learner.html"
+            }
+            else if (ident== "Teacher") {
+                loginform.action="profile_teacher.html"
+            } else {
+                loginform.action="profile_both.html"
+            }
+        }
+    </script>
     <script src="js/plugin.js"></script>
     <script src="js/lightbox.js"></script>
     <script src="js/scripts.js"></script>
