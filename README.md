@@ -4,11 +4,10 @@
 - [x] Profile
 - [x] Doc
 - [x] NFT
+- [x] Login page
+- [x] Sign-up page
 - [] How to split learner and teacher page ?
-- [] Login page
-- [] Sign-up page
 - [] Trading page (NFT, LNT, LNC)
-- [] How to split the pages after login ?
 - [] Mint NFT page
 - [] ...
 
