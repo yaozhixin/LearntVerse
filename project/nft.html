@@ -119,6 +119,25 @@
             display: inline-block;
             margin: 30px;
         }
+
+        #bgDiv {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background-color: black;
+            opacity: 0.2;
+            display: none;
+        }
+
+        #fgDiv {
+            position: absolute;
+            width: 300px;
+            height: 100px;
+            border-radius: 10px;
+            border: 2px solid black;
+            background-color: white;
+            display: none;
+        }
     </style>
 
 </head>
@@ -143,12 +162,12 @@
                     <div class="nft-box rounded-xxl">
                         <img src="images/nft/image-0.png" class="shadow-sm" style="margin-left: 20px;">
                         Book 1 <br /> Price: ?
-                        <button class="button-attrs" style="margin-left: 80px;">Sell</button>
+                        <button class="button-attrs" style="margin-left: 80px;" id="btnSell_1">Sell</button>
                     </div>
                     <div class="nft-box rounded-xxl">
                         <img src="images/nft/image-1.png" class="shadow-sm" style="margin-left: 20px;">
                         Book 2 <br /> Price: ?
-                        <button class="button-attrs" style="margin-left: 80px;">Sell</button>
+                        <button class="button-attrs" style="margin-left: 80px;" id="btnSell_2">Sell</button>
                     </div>
                 </div>
                 </p>
@@ -156,20 +175,92 @@
                     <div class="nft-box rounded-xxl">
                         <img src="images/nft/image-2.png" class="shadow-sm" style="margin-left: 20px;">
                         Book 3 <br /> Price: ?
-                        <button class="button-attrs" style="margin-left: 80px;">Sell</button>
+                        <button class="button-attrs" style="margin-left: 80px;" id="btnSell_3">Sell</button>
                     </div>
                     <div class="nft-box rounded-xxl">
                         <img src="images/nft/image-3.png" class="shadow-sm" style="margin-left: 20px;">
                         Book 4 <br /> Price: ?
-                        <button class="button-attrs" style="margin-left: 80px;">Sell</button>
+                        <button class="button-attrs" style="margin-left: 80px;" id="btnSell_4">Sell</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="right-part card-attrs">
+        <div class="card shadow-xss rounded-xxl border-0">
+            <div class="card-body">
+                <p><span class="fw-700" style="font-style: normal; font-size: 30px; color: black;"> Mint NFT </span></p>
+                <p>
+                    <img src="images/add.png" class="shadow-sm" style="margin-left: 20px; border: 5px solid black; border-radius: 10px; width: 100px; height: auto;">
+                </p>
+                <p>
+                    <div style="display: inline-block;">
+                        <span style="font-style: normal; font-size: 30px; color: black;"> Price: 100 </span></p>
+                    </div>
+                    <div style="display: inline-block; margin-left: 50px;">
+                        <button class="button-attrs" id="Mint">Mint</button>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
 
-        <script src="js/plugin.js"></script>
-        <script src="js/lightbox.js"></script>
-        <script src="js/scripts.js"></script>
+    <div id="bgDiv">
+    </div>
+    <div id="fgDiv">
+        <input type="hidden" id="hidId" />
+        To: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtId" />
+        <br />
+        Price: <input type="text" id="txtCountry" />
+        <br />
+        <input type="button" id="btnSave" value="Confirm" />
+    </div>
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            $('#btnSell_1').click(function () {
+                $('#bgDiv').css('display', 'block')
+                    .width(window.innerWidth + "px")
+                    .height(window.innerHeight + "px");
+                $('#fgDiv').css('display', 'block')
+                    .css('left', (window.innerWidth - 300) / 2 + "px")
+                    .css('top', (window.innerHeight - 100) / 2 + "px");
+            });
+            $('#btnSell_2').click(function () {
+                $('#bgDiv').css('display', 'block')
+                    .width(window.innerWidth + "px")
+                    .height(window.innerHeight + "px");
+                $('#fgDiv').css('display', 'block')
+                    .css('left', (window.innerWidth - 300) / 2 + "px")
+                    .css('top', (window.innerHeight - 100) / 2 + "px");
+            });
+            $('#btnSell_3').click(function () {
+                $('#bgDiv').css('display', 'block')
+                    .width(window.innerWidth + "px")
+                    .height(window.innerHeight + "px");
+                $('#fgDiv').css('display', 'block')
+                    .css('left', (window.innerWidth - 300) / 2 + "px")
+                    .css('top', (window.innerHeight - 100) / 2 + "px");
+            });
+            $('#btnSell_4').click(function () {
+                $('#bgDiv').css('display', 'block')
+                    .width(window.innerWidth + "px")
+                    .height(window.innerHeight + "px");
+                $('#fgDiv').css('display', 'block')
+                    .css('left', (window.innerWidth - 300) / 2 + "px")
+                    .css('top', (window.innerHeight - 100) / 2 + "px");
+            });
+
+            $('#btnSave').click(function () {
+                $('#bgDiv').css('display', 'none');
+                $('#fgDiv').css('display', 'none');
+            });
+        });
+    </script>
+    <script src="js/plugin.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/scripts.js"></script>
 
 
 </body>

@@ -116,6 +116,25 @@
             border: 2px solid black;
             border-radius: 10px;
         }
+
+        #bgDiv {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background-color: black;
+            opacity: 0.2;
+            display: none;
+        }
+
+        #fgDiv {
+            position: absolute;
+            width: 300px;
+            height: 100px;
+            border-radius: 10px;
+            border: 2px solid black;
+            background-color: white;
+            display: none;
+        }
     </style>
 
 </head>
@@ -164,14 +183,22 @@
                 <div class="me-3 rounded-xxl" style="display: inline-block; vertical-align: middle; color: black;"><i
                         class="feather-dollar-sign font-xl"></i></div>
                 <div style="display: inline-block;">
-                    <h4 class="font-xs">LNT&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;150.2</h4>
+                    <h4 class="font-xs" style="display: inline-block;">
+                        LNT&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;150.2&nbsp;&nbsp;&nbsp;</h4>
+                    <div style="display: inline-block;">
+                        <button class="button-attrs" id="lnt_trade">Trade</button>
+                    </div>
                 </div>
                 </p>
                 <p>
                 <div class="me-3 rounded-xxl" style="display: inline-block; vertical-align: middle; color: black;"><i
                         class="feather-dollar-sign font-xl"></i></div>
                 <div style="display: inline-block;">
-                    <h4 class="font-xs">LNC&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;15273</h4>
+                    <h4 class="font-xs" style="display: inline-block;">
+                        LNC&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;15273&nbsp;&nbsp;&nbsp;</h4>
+                    <div style="display: inline-block;">
+                        <button class="button-attrs" id="lnc_trade">Trade</button>
+                    </div>
                 </div>
                 </p>
                 <p>
@@ -297,6 +324,43 @@
         </div>
     </div>
 
+    <div id="bgDiv">
+    </div>
+    <div id="fgDiv">
+        <input type="hidden" id="hidId" />
+        To: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtId" />
+        <br />
+        Price: <input type="text" id="txtCountry" />
+        <br />
+        <input type="button" id="btnSave" value="Confirm" />
+    </div>
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            $('#lnc_trade').click(function () {
+                $('#bgDiv').css('display', 'block')
+                    .width(window.innerWidth + "px")
+                    .height(window.innerHeight + "px");
+                $('#fgDiv').css('display', 'block')
+                    .css('left', (window.innerWidth - 300) / 2 + "px")
+                    .css('top', (window.innerHeight - 100) / 2 + "px");
+            });
+            $('#lnt_trade').click(function () {
+                $('#bgDiv').css('display', 'block')
+                    .width(window.innerWidth + "px")
+                    .height(window.innerHeight + "px");
+                $('#fgDiv').css('display', 'block')
+                    .css('left', (window.innerWidth - 300) / 2 + "px")
+                    .css('top', (window.innerHeight - 100) / 2 + "px");
+            });
+
+            $('#btnSave').click(function () {
+                $('#bgDiv').css('display', 'none');
+                $('#fgDiv').css('display', 'none');
+            });
+        });
+    </script>
     <script src="js/plugin.js"></script>
     <script src="js/lightbox.js"></script>
     <script src="js/scripts.js"></script>
