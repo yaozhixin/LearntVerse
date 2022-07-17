@@ -7,8 +7,8 @@
 - [x] Login page
 - [x] Sign-up page
 - [x] How to split learner and teacher page ?
-- [] Trading page (NFT, LNT, LNC)
-- [] Mint NFT page
+- [x] Trading page (NFT, LNT, LNC)
+- [x] Mint NFT page
 - [] ...
 
 # How to use
